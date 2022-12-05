@@ -81,8 +81,7 @@ let scene = new THREE.Scene()
 // Create the renderer via 'createRenderer',
 // 1st param receives additional WebGLRenderer properties
 // 2nd param receives a custom callback to further configure the renderer
-let renderer = createRenderer({ antialias: true, logarithmicDepthBuffer: true }, (_renderer) => {
-})
+let renderer = createRenderer({ antialias: true, logarithmicDepthBuffer: true })
 
 // Create the camera
 // Pass in fov, near, far and camera position respectively
