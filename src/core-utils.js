@@ -89,11 +89,13 @@ export const runApp = (app, scene, renderer, camera, enableAnimation = false, un
 
         app.updateScene(delta, elapsed)
 
+        app.gpuPanel.startQuery()
         if (composer === null) {
             renderer.render(scene, camera)
         } else {
             composer.render()
         }
+        app.gpuPanel.endQuery()
     }
 
     app.initScene()

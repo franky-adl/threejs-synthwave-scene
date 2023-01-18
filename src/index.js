@@ -2,6 +2,7 @@
 import * as THREE from "three"
 import * as dat from 'dat.gui'
 import Stats from "three/examples/jsm/libs/stats.module"
+import { GPUStatsPanel } from "three/examples/jsm/utils/GPUStatsPanel"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass"
 import { LineGeometry } from "three/examples/jsm/lines/LineGeometry"
@@ -303,6 +304,8 @@ let app = {
 
     // Stats - show fps
     this.stats1 = new Stats()
+    this.gpuPanel = new GPUStatsPanel( renderer.getContext() )
+    this.stats1.addPanel(this.gpuPanel)
     this.stats1.showPanel(0) // Panel 0 = fps
     this.stats1.domElement.style.cssText = "position:absolute;top:0px;left:0px;"
     // this.container is the parent DOM element of the threejs canvas element
