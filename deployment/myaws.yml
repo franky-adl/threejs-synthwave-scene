@@ -6,14 +6,14 @@
   - name: Delete previous content
     file:
       state: absent
-      path: /srv/www/projects.arkon.digital/synthwave-scene/
+      path: /srv/www/projects.arkon.digital/threejs/synthwave-scene/
 
   - name: Recreate directory
     file:
-      path: /srv/www/projects.arkon.digital/synthwave-scene
+      path: /srv/www/projects.arkon.digital/threejs/synthwave-scene
       state: directory
 
   - name: Upload latest build
     copy:
       src: ../dist/
-      dest: /srv/www/projects.arkon.digital/synthwave-scene
+      dest: /srv/www/projects.arkon.digital/threejs/synthwave-scene
